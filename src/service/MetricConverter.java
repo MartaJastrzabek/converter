@@ -1,3 +1,5 @@
+package service;
+
 public class MetricConverter {
 
     private double meters;
@@ -5,8 +7,8 @@ public class MetricConverter {
     private double millimeters;
     private MetricType type;
 
-    public void setType(MetricType type) {
-        this.type = type;
+    public void setType(String type) {
+        this.type = MetricType.valueOf(type);
     }
 
     public double getMeters() {

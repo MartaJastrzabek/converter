@@ -1,3 +1,5 @@
+package service;
+
 public class WeightConverter {
 
     private WeightType type;
@@ -9,8 +11,8 @@ public class WeightConverter {
         return type;
     }
 
-    public void setType(WeightType type) {
-        this.type = type;
+    public void setType(String type) {
+        this.type = WeightType.valueOf(type);
     }
 
     public double getKilograms() {

@@ -1,3 +1,7 @@
+package servlet;
+
+import service.WeightConverter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,17 +25,17 @@ public class WeightConverterServlet extends HttpServlet {
 
         if (!kilograms.isEmpty() && grams.isEmpty() && milligrams.isEmpty()) {
             converter.setKilograms(Double.parseDouble(kilograms));
-            converter.setType(WeightType.KILOGRAMS);
+            converter.setType("KILOGRAMS");
             printWeightConverted(writer, converter);
 
         } else if (kilograms.isEmpty() && !grams.isEmpty() && milligrams.isEmpty()) {
             converter.setGrams(Double.parseDouble(grams));
-            converter.setType(WeightType.GRAMS);
+            converter.setType("GRAMS");
             printWeightConverted(writer, converter);
 
         } else if (kilograms.isEmpty() && grams.isEmpty() && !milligrams.isEmpty()) {
             converter.setMilligrams(Double.parseDouble(milligrams));
-            converter.setType(WeightType.MILLIGRAMS);
+            converter.setType("MILLIGRAMS");
             printWeightConverted(writer, converter);
 
         } else {

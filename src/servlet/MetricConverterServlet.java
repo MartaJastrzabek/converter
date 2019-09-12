@@ -1,3 +1,7 @@
+package servlet;
+
+import service.MetricConverter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,17 +25,17 @@ public class MetricConverterServlet extends HttpServlet {
 
         if (!meters.isEmpty() && centimeters.isEmpty() && millimeters.isEmpty()) {
             converter.setMeters(Double.parseDouble(meters));
-            converter.setType(MetricType.METERS);
+            converter.setType("METERS");
             printMetricConverted(writer, converter);
 
         } else if (meters.isEmpty() && !centimeters.isEmpty() && millimeters.isEmpty()) {
             converter.setCentimeters(Double.parseDouble(centimeters));
-            converter.setType(MetricType.CENTIMETRES);
+            converter.setType("CENTIMETRES");
             printMetricConverted(writer, converter);
 
         } else if (meters.isEmpty() && centimeters.isEmpty() && !millimeters.isEmpty()) {
             converter.setMillimeters(Double.parseDouble(millimeters));
-            converter.setType(MetricType.MILLIMETERS);
+            converter.setType("MILLIMETERS");
             printMetricConverted(writer, converter);
         } else {
             writer.println("Nieprawidłowe dane wejściowe. Należy podać jedną wartość");
